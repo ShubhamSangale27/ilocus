@@ -1,0 +1,27 @@
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Thumbnail</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let file of files ; let i = index">
+            <td>
+                <h5>{{ i+1 }}</h5>
+            </td>
+            <td>
+                <h5>{{ file.name }}</h5>
+            </td>
+            <td>
+                <img style="width: 100px;" [src]="file.thumbnailLink" alt="File Image" class="img-thumbnail" />
+            </td>
+            <td>
+                <button class="btn btn-primary" (click)="downloadFile(file.id)">Download</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
